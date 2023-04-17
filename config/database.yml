@@ -1,6 +1,6 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   database: <%= ENV['DB_NAME'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: <%= ENV['DB_HOST'] %>
@@ -10,8 +10,8 @@ default: &default
   timeout: 5000
 
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   database: <%= ENV['DB_NAME'] %>
   pool: 5
   host: <%= ENV['DB_HOST'] %>
@@ -20,8 +20,8 @@ development:
   password: <%= ENV['DB_PASSWORD'] %>
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   database: <%= ENV['DB_NAME'] %>
   pool: 5
   host: <%= ENV['DB_HOST'] %>
@@ -30,8 +30,8 @@ test:
   password: <%= ENV['DB_PASSWORD'] %>
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
   database: <%= ENV['DB_NAME'] %>
   pool: 5
   host: <%= ENV['DB_HOST'] %>
